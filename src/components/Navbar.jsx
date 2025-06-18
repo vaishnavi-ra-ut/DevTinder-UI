@@ -13,22 +13,22 @@ const Navbar = () => {
         </div>
         {user && (
           <div className="flex gap-2">
-          <div className="dropdown dropdown-end mx-5">
-            <div className="flex items-center gap-2">
-              <p>Welcome {user.firstName} !</p>
-              <div
-              tabIndex={0}
-              role="button"
-              className="flex items-center gap-2 px-3 py-2 rounded-md"
-            >
-              <div className="w-9 h-9 rounded-full  overflow-hidden">
-                <img
-                  alt="Tailwind CSS Navbar component"
-                  src={user.photoURL}
-                  className='w-full h-full object-cover'
-                />
+            <div className="dropdown dropdown-end mx-5">
+              <div className="flex items-center">
+                <p>Welcome {user.firstName} !</p>
+                <div
+                  tabIndex={0}
+                  role="button"
+                  className="flex items-center gap-2 px-3 py-2 rounded-md"
+                >
+                  <div className="w-9 h-9 rounded-full  overflow-hidden">
+                    <img
+                      alt="Tailwind CSS Navbar component"
+                      src={user.photoURL}
+                      className='w-full h-full object-cover'
+                    />
+                </div>
               </div>
-            </div>
             </div>
             <ul
               tabIndex={0}
