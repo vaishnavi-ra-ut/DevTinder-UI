@@ -6,10 +6,13 @@ import { useNavigate } from 'react-router-dom';
 import { BaseURL } from '../utils/constants';
 
 const Login = () => {
-    const dispatch = useDispatch();
+    
     const [emailId, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [error, setError] = useState("");
+
     const navigate = useNavigate();
+    const dispatch = useDispatch();
 
     const handleLogin = async() => {
         
@@ -24,6 +27,7 @@ const Login = () => {
              return navigate("/");
 
         }catch(error) {
+            setError(error?.response?.data);
             console.error("Login failed:", error);
             
         }
@@ -42,6 +46,7 @@ return (
                     <legend className=" fieldset text-[#dde0f1]">Enter Your Password</legend>
                     <input type="text" value={password} onChange={(e)=>setPassword(e.target.value)} className="input border-[#56629d]" placeholder="Password" />
                 </fieldset>
+                <p className='text-red-800'>{error}</p>
                 <div className="card-actions mt-3 flex justify-center ">
                     <button onClick={handleLogin} className="btn bg-[#56629d] border border-1 text-white border-gray-700 shadow-sm shadow-gray-600 hover:border-slate-300 hover:bg-[#4b558a] hover:text-white">
                         Login
