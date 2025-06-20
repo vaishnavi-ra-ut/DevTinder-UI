@@ -25,13 +25,13 @@ const Navbar = () => {
     <>
       <div className="navbar bg-base-300 shadow-sm"> 
         <div className="flex-1">
-          <Link to="/" className="btn btn-ghost text-2xl">DevVerse</Link>
+          <Link to="/" className="btn btn-ghost text-2xl text-[#ced4f5]">DevVerse</Link>
         </div>
         {user && (
           <div className="flex gap-2">
             <div className="dropdown dropdown-end mx-5">
               <div className="flex items-center">
-                <p>Welcome {user.firstName} !</p>
+                <p className='font-semibold'>Welcome {user.firstName}</p>
                 <div
                   tabIndex={0}
                   role="button"
