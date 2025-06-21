@@ -19,13 +19,14 @@ const Feed = () => {
 
   useEffect(() => {
     getFeed();  
-  },  [] );
+  },  );
 
   return (
     feed && (
       <>
-        <div className="flex justify-center">
-          <UserCard user = {feed[4]}  />
+        <div className="flex justify-center flex-col items-center gap-y-3 mt-2">
+           <h1 className="text-xl font-bold mt-2 text-[#ced4f5]">Deploy New Connections!</h1>
+          <UserCard user = {feed[3]}  />
         </div>
     </>
     )
