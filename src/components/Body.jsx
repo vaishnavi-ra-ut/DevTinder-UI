@@ -12,7 +12,8 @@ const Body = () => {
   const userData = useSelector((store) => store.user);
 
   const fetchUser = async () => {
-    if( userData) return;
+    if (userData && userData._id) return;
+
       try {
         const res = await axios.get(BaseURL + "/profile/view", {
           withCredentials: true,
@@ -28,7 +29,7 @@ const Body = () => {
 
   useEffect(() => {
     fetchUser();
-  }  )
+  }, [] )
 
   return (
     <div>
