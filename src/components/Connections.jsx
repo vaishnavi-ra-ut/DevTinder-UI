@@ -45,7 +45,7 @@ const Connections = () => {
   return (
     <div
       key={connection._id}
-      className="flex items-center pl-4 rounded-lg shadow-md w-[25rem] max-w-xl h-[7.6rem] mx-auto my-4 bg-base-200 border border-[#292727]"
+      className="flex items-center pl-4 rounded-lg shadow-md w-[25rem] max-w-xl min-h-[7.6rem] mx-auto my-4 bg-base-200 border p-2 border-[#292727]"
     >
       {/* Photo on the left */}
       <img
@@ -62,7 +62,7 @@ const Connections = () => {
           <h6 className=" text-sm">Skills :</h6>
           <p className="text-sm ml-1">
             {skills?.map((skill, index) => (
-              <p key={index}>{skill}</p>
+              <span key={index}>{skill}</span>
             ))}
           </p>
         </div>

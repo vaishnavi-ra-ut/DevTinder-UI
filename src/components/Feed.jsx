@@ -29,14 +29,8 @@ const Feed = () => {
   return (
     <div className="flex justify-center flex-col items-center gap-y-3 mt-2">
       {!feed || feed?.length === 0 ? (
-        <div className="flex flex-col items-center text-gray-500 mt-16">
-          <img
-            src="/empty-feed.png"
-            alt="No suggestions"
-            className="w-40 h-40 opacity-60"
-          />
+        <div className="flex flex-col items-center text-gray-500 mt-36">
           <p className="mt-4 text-lg font-semibold">No people to suggest right now</p>
-          <p className="text-sm text-gray-400">You’ve already connected with everyone!</p>
         </div>
       ) : (
         <>
