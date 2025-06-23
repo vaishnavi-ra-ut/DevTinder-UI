@@ -10,7 +10,7 @@ const Requests = () => {
 
   const reviewRequest = async (status , _id) => {
     try{
-      const res = axios.post(BaseURL + "/request/review/" + status + "/" + _id , {} , {withCredentials : true})
+      axios.post(BaseURL + "/request/review/" + status + "/" + _id , {} , {withCredentials : true})
       dispatch(removeRequest(_id))
     }catch(err){
       console.log(err);
@@ -23,7 +23,7 @@ const Requests = () => {
         withCredentials: true,
       });
       dispatch(addRequest(res.data.data));
-      console.log("Response from server", res.data);
+
     } catch (err) {
       console.log(err.message);
     }
@@ -47,7 +47,6 @@ const Requests = () => {
       <div className="text-center my-10 ">
         <h1 className="font-bold text-2xl text-[#ced4f5]">Your Requests</h1>
         {requests.map((request) => {
-          console.log("photoURL:", request.fromOurUserId.photoURL);
 
   const {
     firstName,

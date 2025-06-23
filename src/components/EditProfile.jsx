@@ -27,7 +27,7 @@ const EditProfile = ({user}) => {
 
             dispatch(addUser(res.data))
             setToast(true); 
-            const i = setTimeout(()=>{
+            setTimeout(()=>{
                 setToast(false)
             } , 3000);
 

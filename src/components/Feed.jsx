@@ -16,7 +16,6 @@ const Feed = () => {
         withCredentials: true,
       });
       dispatch(addFeed(res.data.data));
-      console.log(res.data.data);
     } catch (err) {
       console.error("Error fetching feed:", err.message);
     }

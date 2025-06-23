@@ -17,11 +17,9 @@ const Login = () => {
     const handleLogin = async() => {
         
         try{
-            console.log("Login button clicked");
             const res = await axios.post(BaseURL + "/login" , {
                 emailId , password
-            } , { withCredentials: true })
-             console.log("Login success:", res.data); 
+            } , { withCredentials: true }) 
              dispatch(addUser(res.data));
 
              return navigate("/");
