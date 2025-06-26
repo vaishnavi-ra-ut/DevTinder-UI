@@ -26,7 +26,7 @@ const Navbar = () => {
       <div className="navbar bg-base-300 shadow-sm sticky top-0 z-10"> 
         <div className="flex-1">
           <Link to="/" className="btn btn-ghost text-2xl text-[#ced4f5]">
-            <img alt="DevVerse Logo" className="h-[2.8rem] w-40 mr-2" src= "https://i.postimg.cc/9QFmWxt1/Screenshot-2025-06-20-203650.png" />
+            <img alt="DevVerse Logo" className="h-[3.7rem] w-52 mt-1" src= "https://i.postimg.cc/Qd6ZzVxp/Screenshot-2025-06-26-123512.png" />
           </Link>
         </div>
         {user && (

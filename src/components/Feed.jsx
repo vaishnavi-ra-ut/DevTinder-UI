@@ -9,21 +9,32 @@ const Feed = () => {
   const dispatch = useDispatch();
   const feed = useSelector((store) => store.feed);
 
-  const getFeed = async () => {
-    if (feed) return;
-    try {
-      const res = await axios.get(BaseURL + "/user/feed", {
-        withCredentials: true,
-      });
-      dispatch(addFeed(res.data.data));
-    } catch (err) {
-      console.error("Error fetching feed:", err.message);
-    }
-  };
+  // const getFeed = async () => {
+  //   if (feed) return;
+  //   try {
+  //     const res = await axios.get(BaseURL + "/user/feed", {
+  //       withCredentials: true,
+  //     });
+  //     dispatch(addFeed(res.data.data));
+  //   } catch (err) {
+  //     console.error("Error fetching feed:", err.message);
+  //   }
+  // };
 
   useEffect(() => {
-    getFeed();
-  }, []);
+    const fetchFeed = async () => {
+      if (feed) return;
+      try {
+        const res = await axios.get(BaseURL + "/user/feed", {
+          withCredentials: true,
+        });
+        dispatch(addFeed(res.data.data));
+      } catch (err) {
+        console.error("Error fetching feed:", err.message);
+      }
+    };
+    fetchFeed();
+  }, [dispatch, feed]);
 
   return (
     <div className="flex justify-center flex-col items-center gap-y-3 mt-2">

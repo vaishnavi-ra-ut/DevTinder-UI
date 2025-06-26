@@ -11,8 +11,25 @@ const Body = () => {
   const Navigate = useNavigate();
   const userData = useSelector((store) => store.user);
 
-  const fetchUser = async () => {
-    if (userData && userData._id) return;
+  // const fetchUser = async () => {
+  //   if (userData && userData._id) return;
+
+  //     try {
+  //       const res = await axios.get(BaseURL + "/profile/view", {
+  //         withCredentials: true,
+  //       })
+  //       dispatch(addUser(res.data))
+  //     } catch (err) {
+  //       if(err.status === 401){
+  //         Navigate("/login");
+  //       }
+  //       console.error("Error fetching user after refresh:", err.message);
+  //     }
+  //   };
+
+  useEffect(() => {
+    const fetchUser = async () => {
+      if (userData && userData._id) return;
 
       try {
         const res = await axios.get(BaseURL + "/profile/view", {
@@ -27,9 +44,8 @@ const Body = () => {
       }
     };
 
-  useEffect(() => {
     fetchUser();
-  }, [] )
+  }, [dispatch, Navigate, userData])
 
   return (
     <div>
